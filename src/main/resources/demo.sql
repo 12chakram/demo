@@ -1,0 +1,7 @@
+CREATE TABLE Item (
+  `ItemId` BIGINT NOT NULL AUTO_INCREMENT,
+  `itemName` VARCHAR(45) NOT NULL,
+  `itemDesc` VARCHAR(45) NULL,
+  `checkInDate` DATETIME NOT NULL,
+  `checkOutDate` DATETIME NOT NULL,
+  PRIMARY KEY (`ItemId`));
