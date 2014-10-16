@@ -27,6 +27,10 @@
 		
 		<link href="<c:url value="/app/resources/css/ace.min.css" />" rel="stylesheet">
 		
+		<link href="<c:url value="/app/resources/css/datepicker.css" />" rel="stylesheet">
+		
+		<link href="<c:url value="/app/resources/css/bootstrap-datetimepicker.css" />" rel="stylesheet">
+		
 		
 		<!-- ace settings handler -->
 		
@@ -42,7 +46,7 @@
 		<script src="<c:url value="/app/resources/js/ace.min.js" />"></script>
 
 		<!-- inline scripts related to this page -->
-		
+		<script src="<c:url value="/app/resources/js/date-time/bootstrap-datepicker.min.js"/>"></script>
 		<!-- the following scripts are used in demo only for onpage help and you don't need them -->
 
 		<script type="text/javascript"> ace.vars['base'] = '..'; </script>

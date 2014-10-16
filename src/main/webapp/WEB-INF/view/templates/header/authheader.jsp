@@ -24,7 +24,7 @@
 				<!-- /section:basics/sidebar.mobile.toggle -->
 				<div class="navbar-header pull-left">
 					<!-- #section:basics/navbar.layout.brand -->
-					<a href="${rootURL}dashboard" class="navbar-brand">
+					<a href="${rootURL}" class="navbar-brand">
 						<small>
 							<i class="fa fa-leaf"></i>
 							id Tracks

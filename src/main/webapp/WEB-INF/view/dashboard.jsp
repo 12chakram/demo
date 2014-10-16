@@ -9,6 +9,11 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Welcome</title>
+		
+		<script type="text/javascript">
+	      $(document).ready(OnloadFunction);
+	  </script>
+		
 	</head> 
 	
 	<body class="no-skin">

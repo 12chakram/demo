@@ -18,16 +18,15 @@ public class ItemController
 {
 	
 	@RequestMapping(method = RequestMethod.GET)
-	public String showDashboard(Model model) {
-		model.addAttribute("myname", "KumarVayyala");
-		return "dashboard";
-	}
-	
-	
-	@RequestMapping(value="/addItem",method = RequestMethod.GET)
 	public String showItemAddPage(Model model) {
 		model.addAttribute("myname", "KumarVayyala");
-		return "addItem";
+		return "addItempage";
+	}
+	
+	@RequestMapping(value="/add",method = RequestMethod.POST)
+	public String addItemAddPage(Model model) {
+		model.addAttribute("myname", "KumarVayyala");
+		return "showItems";
 	}
 	
 	
