@@ -58,5 +58,9 @@
 		<script src="<c:url value="/app/resources/js/app/dashboard.js"/>"></script>
 		
 		
+		<script src="<c:url value="/app/resources/js/jquery.dataTables.min.js" />"></script>
+		<script src="<c:url value="/app/resources/js/jquery.dataTables.bootstrap.js" />"></script>
+		
+		
 </head>
 </html>

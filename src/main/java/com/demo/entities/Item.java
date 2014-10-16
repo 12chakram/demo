@@ -1,7 +1,5 @@
 package com.demo.entities;
 
-import java.util.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,6 +9,20 @@ import javax.persistence.Table;
 @Entity
 @Table(name="ITEMS")
 public class Item {
+
+	@Id 
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private Long itemId;
+	
+	private String itemName;
+	
+	private String itemType;
+	
+	private String description;
+	
+	private String checkInDate;
+	
+	private String pMDueDate;
 
 	public Long getItemId() {
 		return itemId;
@@ -28,40 +40,37 @@ public class Item {
 		this.itemName = itemName;
 	}
 
-	public String getItemDesc() {
-		return itemDesc;
+	public String getItemType() {
+		return itemType;
 	}
 
-	public void setItemDesc(String itemDesc) {
-		this.itemDesc = itemDesc;
+	public void setItemType(String itemType) {
+		this.itemType = itemType;
 	}
 
-	public Date getCheckInDate() {
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getCheckInDate() {
 		return checkInDate;
 	}
 
-	public void setCheckInDate(Date checkInDate) {
+	public void setCheckInDate(String checkInDate) {
 		this.checkInDate = checkInDate;
 	}
 
-	public Date getCheckOutDate() {
-		return checkOutDate;
+	public String getpMDueDate() {
+		return pMDueDate;
 	}
 
-	public void setCheckOutDate(Date checkOutDate) {
-		this.checkOutDate = checkOutDate;
+	public void setpMDueDate(String pMDueDate) {
+		this.pMDueDate = pMDueDate;
 	}
-
-	@Id 
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long itemId;
 	
-	private String itemName;
-	
-	private String itemDesc;
-	
-	private Date checkInDate;
-	
-	private Date checkOutDate;
 	
 }
