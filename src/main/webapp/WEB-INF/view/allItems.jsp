@@ -1,4 +1,4 @@
-
+<%@include file="../../taglib.jsp"%>
 		<div class="main-container" id="main-container">
 			<script type="text/javascript">
 				try{ace.settings.check('main-container' , 'fixed')}catch(e){}
@@ -71,14 +71,20 @@
 																<span class="lbl"></span>
 															</label>
 														</th>
-														<th>Domain</th>
-														<th>Price</th>
-														<th class="hidden-480">Clicks</th>
+														<th>Item ID</th>
+														<th>Item Type</th>
+														<th class="hidden-480">Item Name</th>
 
 														<th>
 															<i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>
-															Update
+															Check-In Date
 														</th>
+														
+														<th>
+															<i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>
+															PMP Date
+														</th>
+														
 														<th class="hidden-480">Status</th>
 
 														<th></th>
@@ -86,6 +92,8 @@
 												</thead>
 
 												<tbody>
+												<c:forEach var="item" items="${allItems}">
+												
 													<tr>
 														<td class="center">
 															<label class="position-relative">
@@ -95,14 +103,15 @@
 														</td>
 
 														<td>
-															<a href="#">app.com</a>
+															<a href="#">${item.itemId}</a>
 														</td>
-														<td>$45</td>
-														<td class="hidden-480">3,330</td>
-														<td>Feb 12</td>
+														<td>${item.itemType}</td>
+														<td class="hidden-480">${item.itemName}</td>
+														<td>${item.checkInDate}</td>
+														<td>${item.pmpDueDate}</td>
 
 														<td class="hidden-480">
-															<span class="label label-sm label-warning">Expiring</span>
+															<span class="label label-sm label-warning">Expire</span>
 														</td>
 
 														<td>
@@ -155,6 +164,7 @@
 															</div>
 														</td>
 													</tr>
+												</c:forEach>
 													</tbody>
 												</table>
 											</div>

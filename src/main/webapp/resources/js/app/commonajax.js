@@ -22,9 +22,9 @@
 	      var itemType = $('#itemType').val();
 	      var description = $('#description').val();
 	      var checkInDate = $('#checkInDate').val();
-	      var PMDueDate = $('#PMDueDate').val();
+	      var pmpDueDate = $('#pmpDueDate').val();
 	      
-	      var jsonRequest = { "itemName" : itemName, "itemType" : itemType, "description": description, "checkInDate":checkInDate,"PMDueDate":PMDueDate};
+	      var jsonRequest = { "itemName" : itemName, "itemType" : itemType, "description": description, "checkInDate":checkInDate,"pmpDueDate":pmpDueDate};
 	    
 		$.ajax({
 			type : 'POST',
@@ -36,13 +36,13 @@
 		            xhr.setRequestHeader("Content-Type", "application/json");
 		        },
 			success : function(item) {
-				
+				$('#createItemFrom')[0].reset();
 				$("#resItemName").text(item.itemName);
 				$("#resItemID").text(item.itemId);
 				$("#resItemType").text(item.itemType);
 				$("#resItemDesc").text(item.description);
 				$("#resCheckIn").text(item.checkInDate);
-				$("#resPMPDue").text(item.pMDueDate);
+				$("#resPMPDue").text(item.pmpDueDate);
 				$("#itemResponseDiv").show();
 				/*var respContent = "";
 	            respContent += "<span class='success'>Smartphone was created: [";

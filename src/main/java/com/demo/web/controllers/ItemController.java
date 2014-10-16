@@ -3,6 +3,10 @@
  */
 package com.demo.web.controllers;
 
+import java.io.IOException;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,6 +16,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.demo.entities.Item;
+import com.demo.services.ItemService;
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 
 /**
  * @author Kumar Vayyala
@@ -21,6 +30,13 @@ import com.demo.entities.Item;
 @RequestMapping(value="/item")
 public class ItemController 
  {
+	
+   private static ItemService itemService;
+	
+	@Autowired
+	public void setItemService(ItemService itemService) {
+		ItemController.itemService = itemService;
+	}
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String showItemAddPage(Model model) {
@@ -52,19 +68,35 @@ public class ItemController
 	@RequestMapping(value="/create", method=RequestMethod.POST,produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public Item createItem(@RequestBody String string) {
-		Item item = new Item();
-		item.setItemId(1L);
-		item.setItemName("Kumar");
-		item.setItemType("Vayyala");
-		item.setDescription("KumarVayyala");
-		item.setCheckInDate("10-14-2014");
-		item.setpMDueDate("11-14-2016");
+		
+		System.out.println(string);
+	
+	       ObjectMapper mapper = new ObjectMapper();
+          Item item = null;
+		try {
+			item = mapper.readValue(string,Item.class);
+		} catch (JsonParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JsonMappingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		if(item!=null){
+			item = itemService.createItem(item);
+		}
         return item;
     }
 	
 	@RequestMapping(value="/all",method = RequestMethod.GET)
 	public String showAllItems(Model model) {
-		System.out.println("kkkkkkkkkkkk");
+		
+		List<Item> allItems = itemService.getAllItems();
+		model.addAttribute("allItems", allItems);
 		return "allItems";
 	}
 	

@@ -1,11 +1,17 @@
 package com.demo.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.demo.dao.ItemDao;
 import com.demo.entities.Item;
 import com.demo.repositories.ItemRepository;
 
+@Service
+@Transactional
 public class ItemServiceBean implements ItemService {
 
 	@Autowired
@@ -38,6 +44,11 @@ public class ItemServiceBean implements ItemService {
 	@Override
 	public Item createItem(Item item) {
 		return itemRepository.save(item);
+	}
+
+	@Override
+	public List<Item> getAllItems() {
+		return itemRepository.findAll();
 	}
 
 }

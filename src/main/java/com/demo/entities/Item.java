@@ -1,5 +1,7 @@
 package com.demo.entities;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,9 +22,9 @@ public class Item {
 	
 	private String description;
 	
-	private String checkInDate;
+	private Date checkInDate;
 	
-	private String pMDueDate;
+	private Date pmpDueDate;
 
 	public Long getItemId() {
 		return itemId;
@@ -56,21 +58,20 @@ public class Item {
 		this.description = description;
 	}
 
-	public String getCheckInDate() {
+	public Date getCheckInDate() {
 		return checkInDate;
 	}
 
-	public void setCheckInDate(String checkInDate) {
+	public void setCheckInDate(Date checkInDate) {
 		this.checkInDate = checkInDate;
 	}
 
-	public String getpMDueDate() {
-		return pMDueDate;
+	public Date getPmpDueDate() {
+		return pmpDueDate;
 	}
 
-	public void setpMDueDate(String pMDueDate) {
-		this.pMDueDate = pMDueDate;
+	public void setPmpDueDate(Date pmpDueDate) {
+		this.pmpDueDate = pmpDueDate;
 	}
-	
 	
 }

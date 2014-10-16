@@ -85,7 +85,7 @@
 
 															<div class="col-xs-12 col-sm-5">
 																<div class="input-group">
-																	<input class="form-control date-picker input-xlarge" id="checkInDate" name="checkInDate" type="text" data-date-format="dd-mm-yyyy" />
+																	<input class="form-control date-picker input-xlarge" id="checkInDate" name="checkInDate" type="text" data-date-format="yyyy-mm-dd" />
 																	<span class="input-group-addon">
 																		<i class="fa fa-calendar bigger-110"></i>
 																	</span>
@@ -98,7 +98,7 @@
 
 															<div class="col-xs-12 col-sm-5">
 																<div class="input-group">
-																	<input class="form-control date-picker input-xlarge" id="PMDueDate" name="PMDueDate" type="text" data-date-format="dd-mm-yyyy" />
+																	<input class="form-control date-picker input-xlarge" id="pmpDueDate" name="pmpDueDate" type="text" data-date-format="yyyy-mm-dd" />
 																	<span class="input-group-addon">
 																		<i class="fa fa-calendar bigger-110"></i>
 																	</span>
