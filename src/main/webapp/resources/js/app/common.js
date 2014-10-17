@@ -4,7 +4,7 @@
 
          function OnloadFunction ()
          {
-        	 OnloadAjaxFunction();
+        	      OnloadAjaxFunction();
 					$('.date-picker').datepicker({
 						autoclose: true,
 						todayHighlight: true
@@ -29,29 +29,9 @@
 					.prev().on(ace.click_event, function(){
 						$(this).next().focus();
 					});
-					
-					
-						$('#sample-table-2').dataTable( {
-							bAutoWidth: false,
-							"aoColumns": [
-							  { "bSortable": false },
-							  null, null,null, null, null,
-							  { "bSortable": false }
-							],
-							"aaSorting": [],
-					
-							//,
-							//"sScrollY": "200px",
-							//"bPaginate": false,
-					
-							//"sScrollX": "100%",
-							//"sScrollXInner": "120%",
-							//"bScrollCollapse": true,
-							//Note: if you are applying horizontal scrolling (sScrollX) on a ".table-bordered"
-							//you may want to wrap the table inside a "div.dataTables_borderWrap" element
-					
-							//"iDisplayLength": 50
-					    } );
+						
+						
+						
 			
          }
 	

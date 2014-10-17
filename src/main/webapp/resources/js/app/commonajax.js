@@ -73,7 +73,6 @@
 				type : 'GET',
 				url : "/demo/app/item/all",
 				success : function(data) {
-					 $('#main-content').html("");
 					 $('#main-content').html(data);
 					 OnloadFunction();
 				}
